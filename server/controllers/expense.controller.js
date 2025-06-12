@@ -1,6 +1,5 @@
 const Expense = require('../models/expense.model');
-const XLSX = require('xlsx');
-
+ 
 // Add new expense
 exports.addExpense = async (req, res) => {
   try {
@@ -50,63 +49,7 @@ exports.deleteExpense = async (req, res) => {
   }
 };
 
-// Bulk upload expenses from Excel
-exports.bulkUploadExpenses = async (req, res) => {
-  try {
-    const workbook = XLSX.readFile(req.file.path);
-    const sheetName = workbook.SheetNames[0];
-    const sheet = workbook.Sheets[sheetName];
-    const data = XLSX.utils.sheet_to_json(sheet, { header: 1 }); // Get raw rows
-
-    const dates = data[0].slice(1); // skip first empty cell
-    const revenueRow = data.find(row => row[0] === 'Revenue');
-    const expensesRow = data.find(row => row[0] === 'Expenses');
-    const reasonRow = data.find(row => row[0] === 'Reason For Expenses');
-
-    const expenses = [];
-    let skipped = 0;
-
-    dates.forEach((date, idx) => {
-      const revenue = Number(revenueRow[idx + 1]);
-      const expensesValue = Number(expensesRow[idx + 1]);
-      const reason = reasonRow ? reasonRow[idx + 1] : '';
-
-      if (!date || isNaN(revenue) || isNaN(expensesValue)) {
-        skipped++;
-        console.log('Skipping:', { date, revenue, expensesValue, reason });
-        return;
-      }
-
-      let jsDate;
-      if (typeof date === 'string' && /^\d{2}-\d{2}-\d{4}$/.test(date)) {
-        // Strictly match DD-MM-YYYY
-        const [day, month, year] = date.split('-');
-        jsDate = new Date(`${year}-${month}-${day}`);
-      } else if (!isNaN(date)) {
-        // Excel serial date number
-        jsDate = new Date(Date.UTC(1899, 11, 30) + (date * 86400000));
-      } else {
-        jsDate = new Date(date);
-      }
-
-      expenses.push({
-        date: jsDate,
-        revenue,
-        expenses: expensesValue,
-        reason: reason || ''
-      });
-    });
-
-    if (expenses.length > 0) {
-      await Expense.insertMany(expenses);
-    }
-    res.json({ message: 'Bulk upload successful', added: expenses.length, skipped });
-  } catch (error) {
-    console.error('Bulk upload error:', error);
-    res.status(500).json({ message: error.message });
-  }
-};
-
+ 
 // Get expenses by date (with optional branch filter)
 exports.getExpensesByDate = async (req, res) => {
   try {
