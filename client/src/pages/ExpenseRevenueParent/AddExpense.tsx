@@ -162,8 +162,8 @@ const AddExpense = () => {
 
   return (
     <div style={{ maxWidth: 1200, margin: '10px auto', width: '100%', paddingBottom: 20 }}>
-      <Row gutter={[10, 10]}>
-        <Col xs={10} md={10}>
+      <Row gutter={[24, 24]}>
+        <Col xs={24} md={10}>
           <Card>
             <Title level={5} style={{ marginBottom: 15, marginTop: 10 }}>
               {editingId ? 'Edit Expense' : 'Add Expense'}
@@ -253,7 +253,7 @@ const AddExpense = () => {
             </Form>
           </Card>
         </Col>
-      <Col xs={10} md={10}>
+      <Col xs={24} md={14}>
   <Card bordered={false}>
     <Title level={5} style={{ marginBottom: 15, marginTop: 10 }}>Expenses List</Title>
     <ViewExpenses
