@@ -403,7 +403,7 @@ const Dashboard = () => {
               bodyStyle={{ padding: 14 }}
               title="Revenue vs Expenses"
             >
-              <div style={{ height: 180, margin: '10px 0' }}>
+              <div style={{ height: 180, margin: '5px 0' }}>
                 <Pie
                   data={{
                     labels: ['Revenue', 'Expenses'],
