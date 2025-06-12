@@ -388,7 +388,7 @@ const Dashboard = () => {
                 ]}
               />
               <Statistic
-                title="Total (Revenue - Expenses)"
+                title="Profit (Revenue - Expenses)"
                 value={totalRevenue - totalExpenses}
                 prefix="₹"
                 valueStyle={{ color: '#1976d2' }}
