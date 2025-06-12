@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'https://unicorn-cafe-management-hgka.vercel.app/api',
+  baseURL: 'https://unicorn-cafe-management-x6vf.vercel.app/api',
 });
 
 axiosInstance.interceptors.request.use(

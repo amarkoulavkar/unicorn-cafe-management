@@ -9,10 +9,11 @@ app.use(cors());
 app.use(express.json());
 
 const allowedOrigins = [
-  '*'
+  'https://unicorn-cafe-management.vercel.app/',
+  'http://localhost:5173/',
 ];
 
-
+ 
 app.use(cors({
   origin: allowedOrigins,
   credentials: true, // if you use cookies or authentication
