@@ -79,7 +79,9 @@ li.ant-menu-overflow-item.ant-menu-item {
 :root {
     background: #fff !important;
 }
-
+.ant-card-body {
+    padding: 10px !important;
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

@@ -234,13 +234,13 @@ const AddExpense = () => {
                       Cancel
                     </Button>
                   )}
-                  <Button
+                  {/* <Button
                     block
                     style={{ background: '#388e3c', color: '#fff', border: 'none', borderRadius: 4 }}
                     onClick={handleBulkUploadClick}
                   >
                     Bulk Upload (Excel)
-                  </Button>
+                  </Button> */}
                   <input
                     ref={fileInputRef}
                     type="file"
