@@ -15,7 +15,7 @@ import {
   Col,
 } from 'antd';
 import dayjs from 'dayjs';
-import { EditOutlined, DeleteOutlined, UploadOutlined } from '@ant-design/icons';
+import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import type { Breakpoint } from 'antd/es/_util/responsiveObserver';
 
 const { Title } = Typography;
