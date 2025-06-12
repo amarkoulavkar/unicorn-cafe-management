@@ -99,15 +99,10 @@ const BottomMenu = () => {
         mode="horizontal"
         selectedKeys={[location.pathname]}
         style={{
-          width: '100%',
-          minWidth: 0,
-          border: 'none',
-          display: 'flex',
-          justifyContent: 'space-around',
-          alignItems: 'center',
+           
           background: 'transparent',
           fontSize: isMobile ? 12 : 16,
-          height: '100%',
+         
         }}
         items={items}
       />

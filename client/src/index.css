@@ -57,9 +57,7 @@ button:focus-visible {
 :where(.css-dev-only-do-not-override-ut69n1).ant-menu .ant-menu-item .anticon +span {
     margin: 0px;
 }
-ul.ant-menu-overflow.ant-menu.ant-menu-root.ant-menu-horizontal.ant-menu-light.css-dev-only-do-not-override-ut69n1 {
-    justify-content: center !important;
-}
+ 
 
 
 :where(.css-dev-only-do-not-override-ut69n1).ant-card .ant-card-body{
@@ -68,7 +66,16 @@ ul.ant-menu-overflow.ant-menu.ant-menu-root.ant-menu-horizontal.ant-menu-light.c
 main.ant-layout-content.css-dev-only-do-not-override-ut69n1 {
     padding-bottom: 80px !important;
 }
- 
+li.ant-menu-overflow-item.ant-menu-item {
+    display: flex
+;
+}
+ .ant-card:not(.ant-card-bordered) {
+    box-shadow: none;
+}
+.ant-card-bordered {
+    border: none;
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

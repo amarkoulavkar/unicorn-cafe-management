@@ -253,16 +253,16 @@ const AddExpense = () => {
             </Form>
           </Card>
         </Col>
-        <Col xs={24} md={14}>
-          <Card>
-            <Title level={5} style={{ marginBottom: 15 ,marginTop:10 }}>Expenses List</Title>
-            <ViewExpenses
-              expenses={expenses}
-              onEdit={handleEdit}
-              onDelete={handleDelete}
-            />
-          </Card>
-        </Col>
+      <Col xs={24} md={14}>
+  <Card bordered={false}>
+    <Title level={5} style={{ marginBottom: 15, marginTop: 10 }}>Expenses List</Title>
+    <ViewExpenses
+      expenses={expenses}
+      onEdit={handleEdit}
+      onDelete={handleDelete}
+    />
+  </Card>
+</Col>
       </Row>
     </div>
   );
