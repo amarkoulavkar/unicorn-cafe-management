@@ -138,10 +138,7 @@ const AddExpense = () => {
     }
   };
 
-  // Bulk upload handlers
-  const handleBulkUploadClick = () => {
-    fileInputRef.current?.click();
-  };
+ 
 
   const handleBulkFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];

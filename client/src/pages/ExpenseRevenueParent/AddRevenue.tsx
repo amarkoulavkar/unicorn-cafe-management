@@ -128,10 +128,7 @@ const handleFinish = async (values: any) => {
     }
   };
 
-  // Bulk upload handlers
-  const handleBulkUploadClick = () => {
-    fileInputRef.current?.click();
-  };
+ 
 
   const handleBulkFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -262,14 +259,14 @@ const handleFinish = async (values: any) => {
                       Cancel
                     </Button>
                   )}
-                  <Button
+                  {/* <Button
                     block
                     icon={<UploadOutlined />}
                     style={{ background: '#388e3c', color: '#fff', border: 'none', borderRadius: 4 }}
                     onClick={handleBulkUploadClick}
                   >
                     Bulk Upload (Excel)
-                  </Button>
+                  </Button> */}
                   <input
                     ref={fileInputRef}
                     type="file"
