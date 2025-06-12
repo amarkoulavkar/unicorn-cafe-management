@@ -32,5 +32,10 @@ app.use('/api/branches', require('./routes/branch.routes'));
 const revenueRoutes = require('./routes/revenue.routes');
 app.use('/api/revenue', revenueRoutes);
 app.use('/api/stats', require('./routes/user.routes'));
-const PORT = process.env.PORT || 5050;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+if (process.env.VERCEL) {
+  module.exports = app; // For Vercel
+} else {
+  const PORT = process.env.PORT || 5050;
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`)); // For local
+}

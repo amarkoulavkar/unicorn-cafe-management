@@ -14,7 +14,7 @@ const Login = () => {
   const onFinish = async (values: { username: string; password: string }) => {
     setLoading(true);
     try {
-      const res = await axiosInstance.post('https://unicorn-cafe-management-x6vf.vercel.app/api/auth/login', values);
+      const res = await axiosInstance.post('/auth/login', values);
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('role', res.data.role);
       // Redirect based on role
