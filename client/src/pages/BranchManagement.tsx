@@ -51,7 +51,7 @@ const BranchManagement = () => {
 
   const fetchBranches = async () => {
     try {
-      const res = await axiosInstance.get('http:/localhost:5050/api/branches', {
+      const res = await axiosInstance.get('https://unicorn-cafe-management-hgka.vercel.app//api/branches', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setBranches(res.data);
@@ -75,14 +75,14 @@ const BranchManagement = () => {
       };
       if (editingId) {
         response = await axiosInstance.put(
-          `http:/localhost:5050/api/branches/${editingId}`,
+          `https://unicorn-cafe-management-hgka.vercel.app//api/branches/${editingId}`,
           payload,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setCredentials(null); // Don't show credentials on edit
       } else {
         response = await axiosInstance.post(
-          'http:/localhost:5050/api/branches',
+          'https://unicorn-cafe-management-hgka.vercel.app//api/branches',
           payload,
           { headers: { Authorization: `Bearer ${token}` } }
         );
@@ -114,7 +114,7 @@ const BranchManagement = () => {
     if (!id) return;
     if (!window.confirm('Delete this branch?')) return;
     try {
-      await axiosInstance.delete(`http:/localhost:5050/api/branches/${id}`, {
+      await axiosInstance.delete(`https://unicorn-cafe-management-hgka.vercel.app//api/branches/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchBranches();
