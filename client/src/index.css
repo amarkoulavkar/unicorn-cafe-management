@@ -59,10 +59,7 @@ button:focus-visible {
 }
  
 
-
-:where(.css-dev-only-do-not-override-ut69n1).ant-card .ant-card-body{
-  padding: 10px;
-}
+ 
 main.ant-layout-content.css-dev-only-do-not-override-ut69n1 {
     padding-bottom: 80px !important;
 }

@@ -173,7 +173,7 @@ const Dashboard = () => {
   return (
     <Layout.Content
       style={{
-        padding: '15px 0',
+        padding: '10px 0',
         background: '#f5f6fa'
       }}
     >
